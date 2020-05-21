@@ -1,7 +1,8 @@
+const cors = require("cors");
 const fastify = require("fastify")({
   logger: true,
 });
-
+fastify.use(cors());
 // Declare a route
 fastify.get("/", function (request, reply) {
   reply.send({ hello: "world" });
